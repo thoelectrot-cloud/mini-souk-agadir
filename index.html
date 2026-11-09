@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mini Souk Agadir – Your Seaside Lifestyle Corner</title>
+<meta name="description" content="A curated coastal pocket-shop in Agadir: natural cosmetics, effortless apparel, beach accessories and beach reads.">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600&display=swap">
+<style>
+:root{--sand:#EFE2CC;--off:#FBF8F2;--ink:#1E2B2F;--muted:#5D6B6E;--terra:#C25B3A;--teal:#12626B;--card:#fff;--line:#E4D6BD;--shadow:0 10px 30px rgba(30,43,47,.10);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--sand:#1B2A2E;--off:#121D20;--ink:#F3EBDD;--muted:#A9B7B8;--terra:#E58A67;--teal:#5CC0C8;--card:#1A2A2E;--line:#2C4247;--shadow:0 10px 30px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{color-scheme:dark;--sand:#1B2A2E;--off:#121D20;--ink:#F3EBDD;--muted:#A9B7B8;--terra:#E58A67;--teal:#5CC0C8;--card:#1A2A2E;--line:#2C4247;--shadow:0 10px 30px rgba(0,0,0,.4)}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--off);color:var(--ink);font-family:"Outfit",system-ui,sans-serif;font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--off) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;text-decoration:none;cursor:pointer;border:2px solid transparent;font-family:inherit;font-size:1rem;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-teal{background:var(--teal);color:var(--off)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.hero{background:linear-gradient(180deg,#0f5560 0%,#1d8a93 38%,#e9c98f 78%,#EFE2CC 100%);color:#fff;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(2.7rem,8vw,5.4rem);font-weight:700;letter-spacing:-.02em;text-shadow:0 2px 20px rgba(0,0,0,.25)}
+.hero .lead{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.sun{position:absolute;right:8%;top:14%;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,#ffe7a8,#f6b756);box-shadow:0 0 90px 30px rgba(255,214,130,.45)}
+.waves{display:block;width:100%;height:70px}
+.sec{padding:84px 0}
+.alt{background:var(--sand)}
+.card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.cat{text-align:left;padding:0;overflow:hidden;cursor:pointer;font:inherit;color:inherit;display:block;width:100%;transition:transform .25s}
+.cat:hover{transform:translateY(-4px)}
+.cat[aria-selected="true"]{outline:3px solid var(--teal)}
+.vis{height:170px;display:grid;place-items:center;font-size:4rem;position:relative}
+.tag{display:inline-block;background:var(--teal);color:var(--off);font-size:.8rem;font-weight:600;padding:3px 12px;border-radius:999px}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rev.in{opacity:1;transform:none}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px}
+label{display:grid;gap:6px;font-weight:500}
+.muted{color:var(--muted)}
+.mm{display:none}.mm.open{display:flex}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rev{opacity:1;transform:none;transition:none}.btn,.cat{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+<div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+<a href="#top" class="text-xl font-bold" style="font-family:Fraunces,serif">Mini Souk Agadir</a>
+<nav class="hidden md:flex items-center gap-7" aria-label="Main">
+<a href="#about" class="hover:underline">About</a><a href="#collections" class="hover:underline">The Collections</a><a href="#visit" class="hover:underline">Visit Us</a><a href="#contact" class="hover:underline">Contact</a>
+<a href="#visit" class="btn btn-terra" style="padding:9px 20px">Get Directions</a>
+</nav>
+<button id="burger" class="md:hidden p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mm">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+</div>
+<nav id="mm" class="mm flex-col gap-1 px-5 pb-4 md:hidden" aria-label="Mobile">
+<a href="#about" class="py-2">About</a><a href="#collections" class="py-2">The Collections</a><a href="#visit" class="py-2">Visit Us</a><a href="#contact" class="py-2">Contact</a>
+<a href="#visit" class="btn btn-terra mt-2">Get Directions</a>
+</nav>
+</header>
+
+<main id="top">
+<section class="hero">
+<div class="sun" aria-hidden="true"></div>
+<div class="max-w-6xl mx-auto px-5 pt-20 pb-10 md:pt-28 relative">
+<h1 class="max-w-3xl">Your Seaside Lifestyle Corner in Agadir</h1>
+<p class="lead text-lg md:text-xl max-w-xl mt-6 mb-9">A curated coastal pocket-shop bringing together local beauty, effortless apparel, handcrafted accessories, and beachside reads by the ocean.</p>
+<div class="flex flex-wrap gap-3">
+<a href="#collections" class="btn btn-terra">Explore Collections</a>
+<a href="#visit" class="btn" style="background:#fff;color:#12626B">Find Our Shop</a>
+</div>
+</div>
+<svg class="waves" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path fill="#EFE2CC" d="M0 40c120-30 240-30 360 0s240 30 360 0 240-30 360 0 240 30 360 0v30H0z"/></svg>
+</section>
+
+<section id="about" class="sec alt" style="padding-top:20px">
+<div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
+<div class="rev">
+<h2 class="text-3xl md:text-5xl mb-5">A little souk, right by the sea.</h2>
+<p class="mb-4">Mini Souk Agadir is a pocket-sized take on the Moroccan market: the colors, the craft and the curiosity, without the crowds. We gathered what a day on the Agadir coast actually calls for and put it under one cool roof.</p>
+<p class="muted">Pop in after a swim, grab a book for the sand, try an argan oil that was pressed nearby, and leave with something that feels like the place. No rush. Sandy feet are welcome.</p>
+</div>
+<div class="rev grid grid-cols-2 gap-4" aria-hidden="true">
+<div class="card" style="height:190px;background:linear-gradient(135deg,#12626B,#5CC0C8)"></div>
+<div class="card mt-8" style="height:190px;background:linear-gradient(135deg,#C25B3A,#F0B27A)"></div>
+<div class="card -mt-8" style="height:190px;background:linear-gradient(135deg,#E9C98F,#F7E6C4)"></div>
+<div class="card" style="height:190px;background:linear-gradient(135deg,#1D8A93,#E9C98F)"></div>
+</div>
+</div>
+</section>
+
+<section id="collections" class="sec">
+<div class="max-w-6xl mx-auto px-5">
+<div class="rev max-w-2xl mb-10">
+<h2 class="text-3xl md:text-5xl mb-3">The Collections</h2>
+<p class="muted">Four corners of the shop. Tap one to see what you can find on the shelves.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="cats" role="tablist" aria-label="Collections"></div>
+<div id="panel" class="card rev mt-8 p-7 md:p-9" role="tabpanel" aria-live="polite"></div>
+</div>
+</section>
+
+<section id="visit" class="sec alt">
+<div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-8 items-stretch">
+<div class="card p-8 rev">
+<h2 class="text-3xl md:text-4xl mb-6">Visit Us</h2>
+<dl class="grid gap-5">
+<div><dt class="font-semibold">Address</dt><dd class="muted">Near the Beach Promenade, Agadir, Morocco</dd></div>
+<div><dt class="font-semibold">Opening hours</dt><dd class="muted">Open Daily | 10:00 AM – 8:00 PM</dd></div>
+<div><dt class="font-semibold">The vibe</dt><dd class="muted">Air-conditioned and drop-in friendly after a beach walk.</dd></div>
+</dl>
+<a class="btn btn-teal mt-8" href="https://www.google.com/maps/search/?api=1&query=Beach+Promenade+Agadir+Morocco" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+<div class="card rev overflow-hidden relative min-h-[300px]" style="background:linear-gradient(160deg,#cfe8e6,#EFE2CC)" role="img" aria-label="Stylized map: the shop sits between the beach promenade and the city.">
+<svg viewBox="0 0 400 320" class="w-full h-full absolute inset-0" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<path d="M0 0h400v120c-60 30-120-20-200 10S60 150 0 120z" fill="#5CC0C8" opacity=".45"/>
+<path d="M0 170c80-30 160 10 240-10s120-20 160 0" stroke="#fff" stroke-width="10" fill="none" opacity=".8"/>
+<path d="M90 320V190M250 320V170M330 320V200" stroke="#fff" stroke-width="7" opacity=".7"/>
+<g transform="translate(200 150)"><path d="M0 0c-20-26-30-40-30-56a30 30 0 0160 0c0 16-10 30-30 56z" fill="#C25B3A"/><circle cy="-56" r="11" fill="#fff"/></g>
+</svg>
+<p class="absolute left-5 bottom-4 font-semibold" style="background:var(--card);padding:6px 14px;border-radius:999px">Mini Souk Agadir</p>
+</div>
+</div>
+</section>
+
+<section id="contact" class="sec">
+<div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12">
+<div class="rev">
+<h2 class="text-3xl md:text-5xl mb-4">Say hello</h2>
+<p class="muted mb-8">Questions, wholesale requests or something you’d like us to set aside? Write to us and we’ll reply soon.</p>
+<ul class="grid gap-4 list-none p-0 m-0">
+<li><a class="btn btn-line" href="https://wa.me/212600000000" target="_blank" rel="noopener">WhatsApp: +212 6 00 00 00 00</a></li>
+<li><a class="btn btn-line" href="https://instagram.com/minisouk.agadir" target="_blank" rel="noopener">Instagram: @minisouk.agadir</a></li>
+<li><a class="btn btn-line" href="mailto:hello@minisoukagadir.ma">hello@minisoukagadir.ma</a></li>
+</ul>
+</div>
+<form id="cf" class="card p-7 grid gap-4 rev">
+<label>Name<input id="n" required autocomplete="name"></label>
+<label>Email<input id="e" type="email" required autocomplete="email"></label>
+<label>Message<textarea id="m" rows="5" required placeholder="Inquiry, wholesale or custom reserve"></textarea></label>
+<button class="btn btn-terra" type="submit">Send message</button>
+<p id="st" class="muted text-sm" role="status"></p>
+</form>
+</div>
+</section>
+</main>
+
+<footer style="background:var(--ink);color:var(--off)">
+<div class="max-w-6xl mx-auto px-5 py-8 flex flex-wrap items-center justify-between gap-4 text-sm">
+<p>© <span id="y"></span> Mini Souk Agadir</p>
+<nav class="flex gap-5" aria-label="Footer"><a href="#about">About</a><a href="#collections">Collections</a><a href="#visit">Visit Us</a><a href="#contact">Contact</a></nav>
+<p>Made with ☀️ in Agadir</p>
+</div>
+</footer>
+
+<script>
+var C=[
+{i:"🧴",t:"Natural Cosmetics",d:"Argan oils, sun care, skincare essentials and solid perfumes.",g:"linear-gradient(135deg,#F0CF8A,#E58A67)",l:["Pure argan oil","Sun care for salty skin","Rhassoul and clay masks","Solid perfumes","Skincare essentials"]},
+{i:"👗",t:"Effortless Apparel",d:"Light linen shirts, summer dresses and beachwear.",g:"linear-gradient(135deg,#F7E6C4,#C9B58F)",l:["Light linen shirts","Summer dresses","Beachwear and cover-ups","Kaftans and light layers"]},
+{i:"🕶️",t:"Beach Accessories",d:"Tote bags, sunglasses, handmade jewelry and caps.",g:"linear-gradient(135deg,#5CC0C8,#12626B)",l:["Woven tote bags","Sunglasses","Handmade jewelry","Caps and sun hats"]},
+{i:"📖",t:"Books & Beach Reads",d:"Novels, travel journals and summer reads.",g:"linear-gradient(135deg,#E58A67,#C25B3A)",l:["Novels","Travel journals","Summer reads","Books about Morocco"]}
+];
+var cats=document.getElementById("cats"),panel=document.getElementById("panel");
+C.forEach(function(c,k){var b=document.createElement("button");b.className="card cat";b.setAttribute("role","tab");b.setAttribute("aria-selected",k===0);
+b.innerHTML='<div class="vis" style="background:'+c.g+'" aria-hidden="true">'+c.i+'</div><div class="p-5"><span class="tag">In Store Now</span><h3 class="text-xl mt-3 mb-1">'+c.t+'</h3><p class="muted text-sm m-0">'+c.d+'</p></div>';
+b.onclick=function(){show(k)};cats.appendChild(b)});
+function show(k){[].forEach.call(cats.children,function(x,j){x.setAttribute("aria-selected",j===k)});var c=C[k];
+panel.innerHTML='<h3 class="text-2xl md:text-3xl mb-4">'+c.i+' '+c.t+'</h3><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2 list-none p-0 m-0">'+c.l.map(function(x){return'<li class="flex gap-3"><span style="color:var(--terra)">•</span>'+x+'</li>'}).join("")+'</ul><p class="muted mt-5 mb-0">Stock changes with the season. Drop by or message us to ask what’s on the shelf today.</p>'}
+show(0);
+var bg=document.getElementById("burger"),mm=document.getElementById("mm");
+bg.onclick=function(){var o=mm.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+mm.onclick=function(e){if(e.target.tagName==="A"){mm.classList.remove("open");bg.setAttribute("aria-expanded","false")}};
+var els=document.querySelectorAll(".rev");
+if("IntersectionObserver"in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});els.forEach(function(x){io.observe(x)})}else els.forEach(function(x){x.classList.add("in")});
+document.getElementById("cf").onsubmit=function(e){e.preventDefault();
+var b="Hello Mini Souk, I’m "+n.value+" ("+document.getElementById("e").value+").\n\n"+m.value;
+location.href="mailto:hello@minisoukagadir.ma?subject="+encodeURIComponent("Message from the website")+"&body="+encodeURIComponent(b);
+document.getElementById("st").textContent="Opening your email app with your message ready to send."};
+document.getElementById("y").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
